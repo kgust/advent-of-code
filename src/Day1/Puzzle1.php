@@ -47,6 +47,11 @@ class Puzzle1
             $this->walk($instruction['walkDistance']);
         }
 
+        return $this->calculation();
+    }
+
+    public function calculation()
+    {
         return abs($this->x) + abs($this->y);
     }
 
