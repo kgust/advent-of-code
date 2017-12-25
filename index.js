@@ -1,15 +1,9 @@
-// captchaCalc.js
-const captcha = require('./captchaCalc');
-const readline = require('readline');
+// index.js
+const fs = require('fs');
+const checksum = require('./spreadsheetChecksum.js');
 
-const reader = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    terminal: false
-});
-
-reader.on('line', line => {
-    console.log(
-        captcha(line)
-    );
-});
+console.log(
+    checksum(
+        fs.readFileSync('/dev/stdin').toString()
+    )
+);
