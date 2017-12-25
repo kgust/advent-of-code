@@ -1,8 +1,8 @@
 // index.js
 const fs = require('fs');
-const calculate = require('./spiralMemory');
+const validate = require('./passphraseFileValidator');
 const input = fs.readFileSync('/dev/stdin').toString();
 
 console.log(
-    calculate(input)
+    validate(input)
 );
