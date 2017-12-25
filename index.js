@@ -1,9 +1,8 @@
 // index.js
 const fs = require('fs');
-const checksum = require('./spreadsheetChecksum.js');
+const calculate = require('./spiralMemory');
+const input = fs.readFileSync('/dev/stdin').toString();
 
 console.log(
-    checksum(
-        fs.readFileSync('/dev/stdin').toString()
-    )
+    calculate(input)
 );
