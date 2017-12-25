@@ -1,0 +1,19 @@
+{
+  "name": "adventofcode",
+  "version": "2017.12.01",
+  "description": "Advent of Code",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "advent",
+    "code",
+    "puzzle"
+  ],
+  "author": "Kevin Gustavson <kdgustavson@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.0.4"
+  }
+}
