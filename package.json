@@ -14,9 +14,12 @@
   "author": "Kevin Gustavson <kdgustavson@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.0.4",
     "jest": "^22.0.4"
   },
   "dependencies": {
+    "babel-preset-env": "^1.6.1",
     "lodash": "^4.17.4"
   }
 }
