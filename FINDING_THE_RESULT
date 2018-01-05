@@ -1,7 +1,0 @@
-The root program is named bpvhwhh.
-
-I used...
-
-cut -f1 -d\  input7.txt|xargs -n1 -I {} grep {} input7.txt | vi -
-
-The root program is the only one not listed as a child.

@@ -1,11 +1,8 @@
 // index.js
 const fs = require('fs');
-const reallocate = require('./MemoryReallocation');
-let input = fs.readFileSync('/dev/stdin').toString();
-let results;
+const findUnbalanced = require('./RecursiveCircus');
 
-input = input.split("\t").map(val => {
-    return parseInt(val, 10);
-});
+let input = fs.readFileSync(process.argv.pop()).toString();
+input = input.split("\n");
 
-console.log('distribution cycles:', reallocate(input));
+console.log(findUnbalanced(input));
