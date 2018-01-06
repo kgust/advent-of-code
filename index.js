@@ -1,8 +1,7 @@
 // index.js
 const fs = require('fs');
-const processInstructions = require('./Processor');
+const processStream = require('./StreamProcessor');
 
 let input = fs.readFileSync(process.argv.pop()).toString();
-input = input.split("\n");
 
-console.log(processInstructions(input));
+console.log(processStream(input));
