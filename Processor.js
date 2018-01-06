@@ -2,13 +2,15 @@
 // 2039 is too low
 // 4567 is correct
 let registers = new Map();
+let allValues = new Set();
 
 module.exports = input => {
     const instructions = input.map(line => { return parseInputLine(line); });
     initializeRegisters(instructions);
     instructions.forEach(instruction => { processInstruction(instruction); });
 
-    return max(registers);
+    //return max(registers); // Part 1
+    return max(allValues); // Part 2
 };
 
 function max(input) {
@@ -61,6 +63,8 @@ function processInstruction(instruction) {
             registers.get(instruction[0]) - parseInt(instruction[2], 10)
         );
     }
+
+    allValues.add(registers.get(instruction[0]));
 }
 
 function initializeRegisters(input) {
