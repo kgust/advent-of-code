@@ -1,8 +1,8 @@
 // index.js
 const fs = require('fs');
-const findUnbalanced = require('./RecursiveCircus');
+const processInstructions = require('./Processor');
 
 let input = fs.readFileSync(process.argv.pop()).toString();
 input = input.split("\n");
 
-console.log(findUnbalanced(input));
+console.log(processInstructions(input));
