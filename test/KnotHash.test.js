@@ -1,5 +1,5 @@
 // KnotHash.test.js
-const { KnotHash, circularReverse } = require('../KnotHash');
+const { KnotHash, circularReverse, denseHash } = require('../KnotHash');
 
 /*
 --- Day 10: Knot Hash ---
@@ -82,4 +82,29 @@ test('0, 1, 2, 3, 4, and were given input lengths of 3, 4, 1, 5', () => {
     expect(hash.position).toBe(3);
     expect(hash.skipSize).toBe(1);
     expect(hash.list).toEqual([2,1,0,3,4]);
+});
+
+test('generate dense hash given sample data', () => {
+    const sparse = [65,27,9,1,4,3,40,50,91,7,6,0,2,5,68,22];
+    expect(denseHash(sparse)).toEqual('40000000000000000000000000000000');
+});
+
+test('empty string', () => {
+    const hash = new KnotHash(256, '');
+    expect(hash.encrypt()).toEqual('a2582a3a0e66e6e86e3812dcb672a272');
+});
+
+test('AoC 2017', () => {
+    const hash = new KnotHash(256, 'AoC 2017');
+    expect(hash.encrypt()).toEqual('33efeb34ea91902bb2f59c9920caa6cd');
+});
+
+test('1,2,3', () => {
+    const hash = new KnotHash(256, '1,2,3');
+    expect(hash.encrypt()).toEqual('3efbe78a8d82f29979031a4aa0b16a9d');
+});
+
+test('1,2,4', () => {
+    const hash = new KnotHash(256, '1,2,4');
+    expect(hash.encrypt()).toEqual('63960835bcdc130f0b66d7ff4f6a5a8e');
 });
