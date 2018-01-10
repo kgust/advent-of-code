@@ -1,5 +1,6 @@
 // HexEd.js
 // Part 1 – answer is 698
+// Part 2 – answer is 1435
 
 
 class HexEd {
@@ -11,6 +12,7 @@ class HexEd {
         this.instructions = input.split(',');
         this.x = 0;
         this.y = 0;
+        this.furthest = 0;
 
         this.instructions.forEach(instruction => {
             switch (instruction) {
@@ -37,6 +39,7 @@ class HexEd {
                 default:
                     throw 'unexpected direction';
             }
+            this.furthest = Math.max(this.furthest, this.steps());
             console.log(this.position(), this.steps(), instruction);
         });
     }
@@ -61,3 +64,4 @@ class HexEd {
 }
 
 module.exports = HexEd;
+

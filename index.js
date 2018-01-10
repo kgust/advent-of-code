@@ -6,4 +6,4 @@ let input = fs.readFileSync(process.argv.pop()).toString();
 input = input.trim();
 
 const grid = new HexEd(input);
-console.log(grid.steps());
+console.log(grid.furthest);
