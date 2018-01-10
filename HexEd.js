@@ -40,7 +40,6 @@ class HexEd {
                     throw 'unexpected direction';
             }
             this.furthest = Math.max(this.furthest, this.steps());
-            console.log(this.position(), this.steps(), instruction);
         });
     }
 

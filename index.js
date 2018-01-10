@@ -1,9 +1,14 @@
 // index.js
 const fs = require('fs');
-const HexEd = require('./HexEd');
+const DigitalPlumber = require('./DigitalPlumber');
 
 let input = fs.readFileSync(process.argv.pop()).toString();
 input = input.trim();
 
-const grid = new HexEd(input);
-console.log(grid.furthest);
+// const plumber = new DigitalPlumber(input);
+// console.log(plumber.countProgramsInGroup(0));
+
+const plumber = new DigitalPlumber(input);
+console.log(
+    plumber.reduce()
+);
