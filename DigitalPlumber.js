@@ -1,4 +1,6 @@
 // DigitalPlumber.js
+// Part 1 answer is 380
+// Part 2 answer is 181
 
 class DigitalPlumber {
     constructor(input) {
@@ -6,23 +8,15 @@ class DigitalPlumber {
     }
 
     traverse(array, connections, previousVisits = []) {
-        const pipes = connections.filter(x => !previousVisits.includes(x));
+        const pipes = connections
+            .filter(x => !previousVisits.has(x));
 
-        if (pipes.includes(0)) {
-            return true;
+        for (let i=0; i<pipes.length; i++) {
+            previousVisits.add(pipes[i]);
+            this.traverse(array, array[pipes[i]], previousVisits);
         }
 
-        for (let i=0; i<connections.length; i++) {
-            if (!previousVisits.includes(connections[i])) {
-                previousVisits.push(connections[i]);
-
-                if (this.traverse(array, array[connections[i]], previousVisits)) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
+        return previousVisits;
     }
 
     parseInput(input) {
@@ -36,11 +30,12 @@ class DigitalPlumber {
             );
     }
 
-    reduce() {
-        return this.input
-            .reduce((carry, value, index, array) => {
-                return carry + (this.traverse(array, value) ? 1 : 0);
-            }, 0);
+    countGroups() {
+        return [...new Set(
+            this.input.map((current, index, array) =>
+                [...this.traverse(array, current, new Set())].sort().join(',')
+            )
+        )].length;
     }
 }
 

@@ -9,6 +9,4 @@ input = input.trim();
 // console.log(plumber.countProgramsInGroup(0));
 
 const plumber = new DigitalPlumber(input);
-console.log(
-    plumber.reduce()
-);
+console.log(plumber.countGroups());
