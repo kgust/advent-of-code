@@ -1,18 +1,34 @@
 // PacketScanner.js
 // Part 1 answer is 748
-// Part 2 answer is ??
+// Part 2 answer is 3873662
 
 class PacketScanner {
     constructor(input) {
         this.input = this.parseInput(input);
     }
 
-    calculateTripSeverity() {
-        return this.input.reduce((accumulator, current) => {
-            const [ level, depth ] = current;
-            const position = this.position(level, depth);
+    detectSafePassage() {
+        let delay = 0;
+        while(true) {
+            let tripSeverity = this.calculateTripSeverity(delay);
+            if (tripSeverity === 0)  {
+                return delay;
+            }
+            delay++;
+        }
+        return false;
+    }
 
-            if (position === 0) accumulator += depth * level;
+    calculateTripSeverity(delay = 0) {
+        return this.input.reduce((accumulator, current, index) => {
+            let [ level, depth ] = current;
+            let position = this.position(level + delay, depth);
+
+            if (position === 0) {
+                accumulator += level * depth;
+                if (level === 0) accumulator++;
+            }
+
             return accumulator;
         }, 0);
     }

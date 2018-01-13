@@ -25,7 +25,12 @@ test('test scanner position', () => {
     ).toEqual([0,1,2,3,4,5,4,3]);
 });
 
-test('parses input', () => {
+test('calculate trip severity', () => {
     const scanner = new PacketScanner(input);
-    expect(scanner.calculateTripSeverity()).toEqual(24);
+    expect(scanner.calculateTripSeverity()).toEqual(25);
+});
+
+test('you can get through the firewall if you delay', () => {
+    const scanner = new PacketScanner(input);
+    expect(scanner.detectSafePassage()).toBe(10);
 });
