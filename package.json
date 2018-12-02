@@ -1,0 +1,31 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "Advent of Code 2018",
+  "main": "aoc.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "jest": "^23.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgust/advent-of-code.git"
+  },
+  "keywords": [
+    "advent",
+    "code",
+    "2018"
+  ],
+  "author": "Kevin Gustavson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kgust/advent-of-code/issues"
+  },
+  "homepage": "https://github.com/kgust/advent-of-code#readme"
+}
