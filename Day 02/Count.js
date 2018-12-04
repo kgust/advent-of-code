@@ -13,8 +13,6 @@ class Count {
             ++result[values[index]];
         }
 
-        // console.log(result);
-
         for (const key of Object.keys(result)) {
             if (result[key] == 2) {
                 DosMatches = true;

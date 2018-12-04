@@ -7,4 +7,3 @@ class Parse {
 }
 
 module.exports = Parse;
-
