@@ -3,10 +3,11 @@
 
 // const fs = require('fs');
 // const input = fs.readFileSync(process.argv.pop()).toString();
-const input = 'hfdlxzhv'; //fs.readFileSync(process.argv.pop()).toString();
-const DiskDefragmentation = require('./DiskDefragmentation');
+// const input = 'hfdlxzhv'; //fs.readFileSync(process.argv.pop()).toString();
+const DuelingGenerators = require('./DuelingGenerator');
+const generator = new DuelingGenerators(65, 16807, 8921, 48271);
 
-const defragger = new DiskDefragmentation(input);
 console.log(
-    defragger.defrag()
+    generator.genA.next().value,
+    generator.genA.next().value
 );
