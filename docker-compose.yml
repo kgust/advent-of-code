@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  php7:
+    build:
+      context: .
+      dockerfile: Dockerfile-7.4
+    volumes:
+      - .:/code
+    working_dir: /code
+  php8:
+    build:
+      context: .
+      dockerfile: Dockerfile-8.0
+    volumes:
+      - .:/code
+    working_dir: /code
