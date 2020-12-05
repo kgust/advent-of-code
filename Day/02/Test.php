@@ -14,7 +14,7 @@ class Test extends TestCase
 
     public function testParseInput(): void
     {
-        $input = require('parse_input.php');
+        $input = require(__DIR__ . '/parse_input.php');
         $this->assertEquals([1,4,'n','nnnnn'], $input[0]);
         $this->assertEquals([5,7,'z','qhcgzzz'], $input[1]);
     }
@@ -31,7 +31,7 @@ class Test extends TestCase
 
     public function testInputPartA(): void
     {
-        $input = require('parse_input.php');
+        $input = require(__DIR__ . '/parse_input.php');
 
         $this->assertCount(1000, $input);
 
@@ -56,7 +56,7 @@ class Test extends TestCase
 
     public function testInputPartB(): void
     {
-        $input = require('parse_input.php');
+        $input = require(__DIR__ . '/parse_input.php');
 
         $this->assertCount(1000, $input);
 

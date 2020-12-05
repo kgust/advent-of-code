@@ -27,7 +27,7 @@ class Test extends TestCase
 
     public function testInputA(): void
     {
-        $input = require('./input.php');
+        $input = require(__DIR__ . '/input.php');
 
         foreach ($input as $key1 => $value1) {
             foreach ($input as $key2 => $value2) {
@@ -59,7 +59,7 @@ class Test extends TestCase
 
     public function testInputB(): void
     {
-        $input = require('./input.php');
+        $input = require(__DIR__ . '/input.php');
 
         foreach ($input as $key1 => $value1) {
             foreach ($input as $key2 => $value2) {

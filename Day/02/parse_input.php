@@ -1,6 +1,6 @@
 <?php
 
-$handle = fopen('input', 'r');
+$handle = fopen(__DIR__ . '/input', 'r');
 
 $values = [];
 

@@ -9,7 +9,7 @@ class Test extends TestCase
     public function testSamplePassportsAreComplete(): void
     {
         $processor = new Processor();
-        $passports = $processor->parseFile('sample');
+        $passports = $processor->parseFile(__DIR__ . '/sample');
         $validPassports = $processor->getCompletePassports($passports);
 
         $this->assertCount(2, $validPassports);
@@ -18,7 +18,7 @@ class Test extends TestCase
     public function testInputPassportsAreComplete(): void
     {
         $processor = new Processor();
-        $passports = $processor->parseFile('input');
+        $passports = $processor->parseFile(__DIR__ . '/input');
         $validPassports = $processor->getCompletePassports($passports);
 
         $this->assertCount(226, $validPassports);
@@ -27,7 +27,7 @@ class Test extends TestCase
     public function testInputPassportsAreValid(): void
     {
         $processor = new Processor();
-        $passports = $processor->parseFile('input');
+        $passports = $processor->parseFile(__DIR__ . '/input');
         $validPassports = $processor->getValidPassports($passports);
 
         $this->assertIsArray($validPassports);

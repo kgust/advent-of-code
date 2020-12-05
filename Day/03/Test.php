@@ -8,7 +8,7 @@ class Test extends TestCase
 {
     public function testParseInput(): void
     {
-        $input = require('parse_input.php');
+        $input = require(__DIR__ . '/parse_input.php');
 
         $this->assertTrue($input[0][1]);
         $this->assertTrue($input[1][0]);
@@ -27,7 +27,7 @@ class Test extends TestCase
 
     public function testInputTreesHit(): void
     {
-        $input = require('parse_input.php');
+        $input = require(__DIR__ . '/parse_input.php');
 
         $processor = new Processor($input);
         $treesHit = count($processor->getTreesHit(3));
@@ -51,7 +51,7 @@ class Test extends TestCase
 
     public function testAllInputSlopes(): void
     {
-        $input = require('parse_input.php');
+        $input = require(__DIR__ . '/parse_input.php');
 
         $processor = new Processor($input);
 
