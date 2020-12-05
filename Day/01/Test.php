@@ -1,19 +1,22 @@
 <?php
-
+declare(strict_types=1);
 namespace Day\One;
+
 use PHPUnit\Framework\TestCase;
 
 class Test extends TestCase
 {
     private $input = [ 1721, 979, 366, 299, 675, 1456 ];
 
-    public function testSampleA()
+    public function testSampleA(): void
     {
         $input = $this->input;
 
         foreach ($input as $key1 => $value1) {
             foreach ($input as $key2 => $value2) {
-                if ($key1 === $key2) continue;
+                if ($key1 === $key2) {
+                    continue;
+                }
 
                 if ($value1 + $value2 === 2020) {
                     $this->assertEquals(514579, $value1 * $value2);
@@ -22,13 +25,15 @@ class Test extends TestCase
         }
     }
 
-    public function testInputA()
+    public function testInputA(): void
     {
         $input = require('./input.php');
 
         foreach ($input as $key1 => $value1) {
             foreach ($input as $key2 => $value2) {
-                if ($key1 === $key2) continue;
+                if ($key1 === $key2) {
+                    continue;
+                }
 
                 if ($value1 + $value2 === 2020) {
                     $this->assertEquals(889779, $value1 * $value2);
@@ -37,7 +42,7 @@ class Test extends TestCase
         }
     }
 
-    public function testSampleB()
+    public function testSampleB(): void
     {
         $input = $this->input;
 
@@ -52,7 +57,7 @@ class Test extends TestCase
         }
     }
 
-    public function testInputB()
+    public function testInputB(): void
     {
         $input = require('./input.php');
 
@@ -62,7 +67,7 @@ class Test extends TestCase
                     if ($value1 + $value2 + $value3 === 2020) {
                         $this->assertEquals(76110336, $value1 * $value2 * $value3);
 
-                        return true;
+                        return;
                     }
                 }
             }
