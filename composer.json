@@ -16,6 +16,12 @@
             "Day\\Ten\\": "Day\\10"
         }
     },
+    "require": {
+        "ext-json": "*",
+        "psy/psysh": "^0.10.4",
+        "phpstan/phpstan": "^0.12.58",
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.0"
     },
@@ -25,8 +31,5 @@
             "name": "Kevin Gustavson",
             "email": "kdgustavson@gmail.com"
         }
-    ],
-    "require": {
-        "psy/psysh": "^0.10.4"
-    }
+    ]
 }
