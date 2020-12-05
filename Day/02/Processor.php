@@ -1,14 +1,19 @@
 <?php
+declare(strict_types=1);
 namespace Day\Two;
 
 class Processor
 {
+    /**
+     * @param array<string> $input
+     * @return array<string>
+     */
     public function findSledRentalValidPasswords(array $input): array
     {
         $validPasswords = [];
 
         foreach ($input as $index => $password) {
-            preg_match_all("/{$password[2]}/",$password[3], $matches);
+            preg_match_all("/{$password[2]}/", $password[3], $matches);
 
             $numberOfMatches = count($matches[0]);
 
@@ -20,6 +25,10 @@ class Processor
         return $validPasswords;
     }
 
+    /**
+     * @param array<mixed> $input
+     * @return array<mixed>
+     */
     public function findTobogganValidPasswords(array $input): array
     {
         $validPasswords = [];
@@ -31,8 +40,12 @@ class Processor
             $password = $values[3];
 
             $matches = 0;
-            if ($password[$index1] === $character) $matches++;
-            if ($password[$index2] === $character) $matches++;
+            if ($password[$index1] === $character) {
+                $matches++;
+            }
+            if ($password[$index2] === $character) {
+                $matches++;
+            }
 
             if ($matches === 1) {
                 $validPasswords[$index] = $values;
