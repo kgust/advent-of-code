@@ -1,12 +1,12 @@
 <?php
-
+declare(strict_types=1);
 namespace Day\Three;
 
 use PHPUnit\Framework\TestCase;
 
 class Test extends TestCase
 {
-    public function testParseInput()
+    public function testParseInput(): void
     {
         $input = require('parse_input.php');
 
@@ -15,7 +15,7 @@ class Test extends TestCase
         $this->assertFalse($input[10][4]);
     }
 
-    public function testSampleTreesHit()
+    public function testSampleTreesHit(): void
     {
         $input = require('parse_sample.php');
 
@@ -25,7 +25,7 @@ class Test extends TestCase
         $this->assertEquals(7, $treesHit);
     }
 
-    public function testInputTreesHit()
+    public function testInputTreesHit(): void
     {
         $input = require('parse_input.php');
 
@@ -35,7 +35,7 @@ class Test extends TestCase
         $this->assertEquals(193, $treesHit);
     }
 
-    public function testAllSampleSlopes()
+    public function testAllSampleSlopes(): void
     {
         $input = require('parse_sample.php');
 
@@ -49,7 +49,7 @@ class Test extends TestCase
         $this->assertEquals(336, 2 * 7 * 3 * 4 * 2);
     }
 
-    public function testAllInputSlopes()
+    public function testAllInputSlopes(): void
     {
         $input = require('parse_input.php');
 

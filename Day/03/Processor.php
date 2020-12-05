@@ -1,17 +1,27 @@
 <?php
-
+declare(strict_types=1);
 namespace Day\Three;
-
 
 class Processor
 {
-    private array $input;
+    /**
+     * @var string[]
+     */
+    private $input;
 
+    /**
+     * @param array<string> $input
+     */
     public function __construct(array $input)
     {
         $this->input = $input;
     }
 
+    /**
+     * @param int $right
+     * @param int $down
+     * @return array<array>
+     */
     public function getTreesHit(int $right, int $down = 1): array
     {
         $lines = count($this->input);
@@ -38,7 +48,12 @@ class Processor
         return count($this->getTreesHit($right, $down));
     }
 
-    private function isTree(array $line, int $position)
+    /**
+     * @param bool[] $line
+     * @param int $position
+     * @return bool
+     */
+    private function isTree(array $line, int $position): bool
     {
         return $line[$position];
     }
