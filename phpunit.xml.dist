@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap = "vendor/autoload.php" backupGlobals = "false" colors = "true" stopOnFailure = "false">
+<phpunit
+    bootstrap="vendor/autoload.php"
+    backupGlobals="false"
+    colors="true"
+    stopOnFailure="false">
     <!--printerClass = "DiabloMedia\PHPUnit\Printer\PrettyPrinter"-->
     <testsuites>
         <testsuite name="Advent of Code">
