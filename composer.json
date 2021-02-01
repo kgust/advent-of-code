@@ -13,7 +13,12 @@
             "Day\\Seven\\": "Day\\07",
             "Day\\Eight\\": "Day\\08",
             "Day\\Nine\\": "Day\\09",
-            "Day\\Ten\\": "Day\\10"
+            "Day\\Ten\\": "Day\\10",
+            "Day\\Eleven\\": "Day\\11",
+            "Day\\Twelve\\": "Day\\12",
+            "Day\\Thirteen\\": "Day\\13",
+            "Day\\Fourteen\\": "Day\\14",
+            "Day\\Fifteen\\": "Day\\15"
         }
     },
     "require": {
