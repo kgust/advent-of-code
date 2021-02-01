@@ -39,7 +39,7 @@ class Processor
             try {
                 json_encode($passport);
                 $completePassports[] = $passport;
-            } catch (Error $error) {
+            } catch (Error) {
                 // nothing to see here
             }
         }
@@ -54,6 +54,7 @@ class Processor
     public function getValidPassports(array $passports): ?array
     {
         $completePassports = $this->getCompletePassports($passports);
+        $validPassports = [];
 
         foreach ($completePassports as $passport) {
             if ($this->isValid($passport)) {
@@ -101,7 +102,7 @@ class Processor
         }
 
         //hcl (Hair Color) - a # followed by exactly six characters 0-9 or a-f.
-        if (!preg_match('/^\#[0-9a-f]{6}$/', $passport->getHairColor())) {
+        if (!preg_match('/^#[0-9a-f]{6}$/', $passport->getHairColor())) {
             return false;
         }
         

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Day\Five;
 
+use JetBrains\PhpStorm\ArrayShape;
 use JsonSerializable;
 
 class BoardingPass implements JsonSerializable
@@ -20,9 +21,7 @@ class BoardingPass implements JsonSerializable
         $this->column = $this->seat - ($this->row << 3);
     }
 
-    /**
-     * @return array<string, int>
-     */
+    #[ArrayShape(['row' => "int", 'column' => "float|int", 'seat' => "float|int"])]
     public function jsonSerialize(): array
     {
         return [

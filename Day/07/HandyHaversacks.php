@@ -2,8 +2,6 @@
 declare(strict_types=1);
 namespace Day\Seven;
 
-use Day\Four\Passport;
-
 class HandyHaversacks
 {
     private array $bags;
@@ -44,7 +42,7 @@ class HandyHaversacks
         return [$type, $inside];
     }
 
-    public function findPossibleBags()
+    public function findPossibleBags(): array
     {
         $possibleBags = [];
 

@@ -6,7 +6,8 @@ use PHPUnit\Framework\TestCase;
 
 class Test extends TestCase
 {
-    private $input = [ 1721, 979, 366, 299, 675, 1456 ];
+    /** @var array|int[] */
+    private array $input = [ 1721, 979, 366, 299, 675, 1456 ];
 
     public function testSampleA(): void
     {

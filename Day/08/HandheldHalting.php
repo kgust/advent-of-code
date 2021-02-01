@@ -3,17 +3,19 @@ declare(strict_types=1);
 
 namespace Day\Eight;
 
+use InvalidArgumentException;
+
 class HandheldHalting
 {
     private $stdErr;
     public array $input;
+    private int $instruction = 0;
+    private int $register = 0;
 
     public function __construct()
     {
         $this->stdErr = fopen('php://stderr','a');
     }
-    private $instruction = 0;
-    private $register = 0;
 
     public function parse(string $input): array
     {
@@ -41,8 +43,6 @@ class HandheldHalting
             $executedInstructions[] = $this->getInstruction();
             $this->executeStep();
         }
-
-        return null;
     }
 
     public function executeStep(): array
@@ -50,7 +50,7 @@ class HandheldHalting
         [$operation, $value] = $this->input[$this->instruction];
 
         if (!is_string($operation)) {
-            throw new \InvalidArgumentException("Invalid operation: '{$operation}'.");
+            throw new InvalidArgumentException("Invalid operation: '{$operation}'.");
         }
 
         fwrite(
@@ -92,7 +92,6 @@ class HandheldHalting
 
     private function nop($value): void
     {
-        $value++;
         $this->instruction++;
     }
 

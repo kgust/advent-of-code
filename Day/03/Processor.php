@@ -2,15 +2,17 @@
 declare(strict_types=1);
 namespace Day\Three;
 
+use JetBrains\PhpStorm\Pure;
+
 class Processor
 {
     /**
-     * @var string[]
+     * @var array<array<bool>>
      */
-    private $input;
+    private array $input;
 
     /**
-     * @param array<string> $input
+     * @param array<array<bool>> $input
      */
     public function __construct(array $input)
     {
@@ -22,6 +24,7 @@ class Processor
      * @param int $down
      * @return array<array>
      */
+    #[Pure]
     public function getTreesHit(int $right, int $down = 1): array
     {
         $lines = count($this->input);
@@ -43,6 +46,7 @@ class Processor
         return $treesHit;
     }
 
+    #[Pure]
     public function countTreesHit(int $right, int $down = 1): int
     {
         return count($this->getTreesHit($right, $down));

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class HandyHaversacksTest extends TestCase
 {
-    private $sample = <<<EOT
+    private string $sample = <<<EOT
         light red bags contain 1 bright white bag, 2 muted yellow bags.
         dark orange bags contain 3 bright white bags, 4 muted yellow bags.
         bright white bags contain 1 shiny gold bag.
@@ -50,7 +50,7 @@ class HandyHaversacksTest extends TestCase
     {
         $file = file_get_contents(__DIR__ . '/input');
         $service = new HandyHaversacks();
-        $input = $service->parse($file);
+        $service->parse($file);
 
         $this->assertTrue($service->containsShinyGoldBag('dim salmon'));
         $this->assertTrue($service->containsShinyGoldBag('dotted silver'));
@@ -63,9 +63,9 @@ class HandyHaversacksTest extends TestCase
     public function whichSampleBagsCanContainAShinyGoldBag()
     {
         $service = new HandyHaversacks();
-        $input = $service->parse($this->sample);
+        $service->parse($this->sample);
 
-        $possibleBags = $service->findPossibleBags($input);
+        $possibleBags = $service->findPossibleBags();
         $this->assertCount(4, $possibleBags);
     }
 
@@ -76,9 +76,9 @@ class HandyHaversacksTest extends TestCase
     {
         $file = file_get_contents(__DIR__ . '/input');
         $service = new HandyHaversacks();
-        $input = $service->parse($file);
+        $service->parse($file);
 
-        $possibleBags = $service->findPossibleBags($input);
+        $possibleBags = $service->findPossibleBags();
         $this->assertCount(252, $possibleBags);
     }
 

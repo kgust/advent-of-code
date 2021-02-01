@@ -4,6 +4,9 @@ namespace Day\Six;
 
 class CustomCustoms
 {
+    /**
+     * @return array<int, array<string, int<1, max>>>
+     */
     public function parseSample(): array
     {
         $sample = <<<EOT
@@ -27,7 +30,11 @@ class CustomCustoms
         return $this->parse($sample);
     }
 
-    public function parseInput($filename = __DIR__ . '/' . 'input'): array
+    /**
+     * @param string $filename
+     * @return array<int, array<string, int<1, max>>>
+     */
+    public function parseInput(string $filename = __DIR__ . '/' . 'input'): array
     {
         $text = file_get_contents($filename);
         $text = trim($text);
@@ -35,6 +42,10 @@ class CustomCustoms
         return $this->parse($text);
     }
 
+    /**
+     * @param string $text
+     * @return array<int, array<string, int<1, max>>>
+     */
     private function parse(string $text): array
     {
         $results = [];
@@ -46,7 +57,11 @@ class CustomCustoms
 
             foreach ($records as $rindex => $record) {
                 for ($inc = 0; $inc < strlen($record); $inc++) {
-                    $results[$gindex][$record[$inc]]++;
+                    if (isset($results[$gindex][$record[$inc]])) {
+                        $results[$gindex][$record[$inc]]++;
+                    } else {
+                        $results[$gindex][$record[$inc]] = 1;
+                    }
                 }
             }
         }

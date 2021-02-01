@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class HandheldHaltingTest extends TestCase
 {
-    public $sample = <<<EOT
+    public string $sample = <<<EOT
         nop +0
         acc +1
         jmp +4
@@ -71,7 +71,7 @@ class HandheldHaltingTest extends TestCase
         $service->parse($file);
         $instructions = array_filter(
             $service->input,
-            function ($instruction, $value) {
+            function ($instruction) {
                 return $instruction[0] !== 'acc';
             },
             ARRAY_FILTER_USE_BOTH

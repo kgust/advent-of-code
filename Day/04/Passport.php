@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace Day\Four;
 
+use JetBrains\PhpStorm\ArrayShape;
 use JsonSerializable;
 
 class Passport implements JsonSerializable
@@ -71,6 +72,15 @@ class Passport implements JsonSerializable
         return $this->countryId;
     }
 
+    #[ArrayShape([
+        'birthYear' => "string",
+        'issueYear' => "string",
+        'expirationYear' => "string",
+        'eyeColor' => "string",
+        'hairColor' => "string",
+        'height' => "string",
+        'passportId' => "string"
+    ])]
     public function __toArray(): array
     {
         return [
@@ -85,6 +95,15 @@ class Passport implements JsonSerializable
         ];
     }
 
+    #[ArrayShape([
+        'birthYear' => "string",
+        'issueYear' => "string",
+        'expirationYear' => "string",
+        'eyeColor' => "string",
+        'hairColor' => "string",
+        'height' => "string",
+        'passportId' => "string"
+    ])]
     public function jsonSerialize(): array
     {
         return $this->__toArray();
