@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace Day\Nine;
 
 use PHPUnit\Framework\TestCase;
