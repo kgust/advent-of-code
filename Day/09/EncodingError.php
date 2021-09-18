@@ -58,7 +58,6 @@ class EncodingError
         $inputSize = count($input);
 
         for ($i = 0; $i < $inputSize; $i++) {
-            file_put_contents('/dev/stderr', $i . "\n", FILE_APPEND);
             $windowSize = 1;
             $accumulator = $input[$i];
             $values = [$input[$i]];
@@ -73,12 +72,6 @@ class EncodingError
                 if ($accumulator === $corruptValue) {
                     $value = min($values) + max($values);
                     $equation = sprintf("%s,%s: %s + %s = %s\n", $i, $windowSize, min($values), max($values), $value);
-
-                    file_put_contents(
-                        '/dev/stderr',
-                        $equation,
-                        FILE_APPEND
-                    );
 
                     return $value;
                 }

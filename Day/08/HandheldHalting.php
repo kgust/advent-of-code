@@ -7,15 +7,9 @@ use InvalidArgumentException;
 
 class HandheldHalting
 {
-    private $stdErr;
     public array $input;
     private int $instruction = 0;
     private int $register = 0;
-
-    public function __construct()
-    {
-        $this->stdErr = fopen('php://stderr','a');
-    }
 
     public function parse(string $input): array
     {
@@ -53,11 +47,6 @@ class HandheldHalting
             throw new InvalidArgumentException("Invalid operation: '{$operation}'.");
         }
 
-        fwrite(
-            $this->stdErr, sprintf(
-            "%s: %s %s (%s)\n",
-            $this->instruction, $operation, $value, $this->getRegister()
-        ));
         $this->{$operation}($value);
 
         return [$this->instruction, $operation, $value];
