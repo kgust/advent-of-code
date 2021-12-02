@@ -1,2 +1,7 @@
 /vendor/
 composer.lock
+*.cache
+
+# Temporary
+docker-compose.yml
+Dockerfile
