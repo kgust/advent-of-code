@@ -38,7 +38,7 @@ class Day01Test extends TestCase
 
     public static function inputs(): iterable
     {
-        yield 'sample' => ['input/samples/Day01', 199, 200, 7, 5];
+        yield 'sample' => ['input/Sample01', 199, 200, 7, 5];
         yield 'input' => ['input/Day01', 168, 166, 1301, 1346];
     }
 }

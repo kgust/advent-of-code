@@ -9,13 +9,13 @@ class Day02Test extends TestCase
 {
     public function testParseInput(): void
     {
-        $samples = Day02::parseInput('input/samples/Day02');
+        $samples = Day02::parseInput('input/Sample02');
         $this->assertEquals(['direction' => 'forward', 'value' => 5], $samples[0]);
     }
 
     public function testCount(): void
     {
-        $this->assertEquals(['forward' => 15, 'down' => 13, 'up' => 3], Day02::count('input/samples/Day02'));
+        $this->assertEquals(['forward' => 15, 'down' => 13, 'up' => 3], Day02::count('input/Sample02'));
     }
 
     /**
@@ -39,7 +39,7 @@ class Day02Test extends TestCase
 
     public static function inputs(): iterable
     {
-        yield 'sample' => ['input/samples/Day02', 150, 900];
+        yield 'sample' => ['input/Sample02', 150, 900];
         yield 'input' => ['input/Day02', 2091984, 2086261056];
     }
 }
