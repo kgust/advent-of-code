@@ -9,9 +9,8 @@ class Day03
     {
         $contents = file_get_contents(__DIR__ . '/../' . $path);
         $lines = explode("\n", $contents);
-        $lines = array_filter($lines);
 
-        return $lines;
+        return array_filter($lines);
     }
 
     public static function calculateGamma(array $lines): array
