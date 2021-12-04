@@ -52,7 +52,7 @@ class Day03
     public static function determineCO2ScrubberRating(array $numbers, int $position = 0): string
     {
         $mostCommon = self::calculateGamma(array_values($numbers))[$position];
-        $leastCommon = $mostCommon === 1 ? 0 : 1;
+        $leastCommon = $mostCommon ^ 1;
 
         $filtered = array_filter(
             $numbers,
