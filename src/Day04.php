@@ -41,18 +41,30 @@ class Day04
      */
     public static function findFirstWin(array $boards, array $calledNumbers): int
     {
+        $wins = self::findAllWins($boards, $calledNumbers);
+
+        return reset($wins);
+    }
+
+    /**
+     * @param array<BingoBoard> $boards
+     */
+    public static function findAllWins(array $boards, array $calledNumbers): array
+    {
+        $wins = [];
         for ($position = 0; $position < count($calledNumbers); $position += 1) {
             $numbers = array_slice($calledNumbers, 0, $position + 1);
-            foreach ($boards as $board) {
+            foreach ($boards as $index => $board) {
+                if (in_array($index, array_keys($wins))) continue;
+
                 if ($board->hasBingo($numbers)) {
                     $lastNumber = end($numbers);
-
-                    return $lastNumber * $board->sumUnmarkedValues($numbers);
+                    $product = $lastNumber * $board->sumUnmarkedValues($numbers);
+                    $wins[$index] = $product;
                 }
             }
         }
 
-        return 0;
+        return $wins;
     }
-
 }

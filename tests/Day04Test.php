@@ -35,12 +35,22 @@ class Day04Test extends TestCase
     public function testFindFirstWin()
     {
         $boards = Day04::parseInput('input/Sample04');
-        $product = Day04::findFirstWin($boards, Day04::$sampleNumbers);
-        $this->assertSame(4512, $product);
+        $firstWinProduct = Day04::findAllWins($boards, Day04::$sampleNumbers);
+        $this->assertSame(4512, current($firstWinProduct));
 
         $boards = Day04::parseInput('input/Day04');
-        $product = Day04::findFirstWin($boards, Day04::$sampleNumbers);
-        $this->assertGreaterThan(19171, $product);
-        $this->assertSame(19171, $product);
+        $allWins = Day04::findAllWins($boards, Day04::$actualNumbers);
+        $this->assertSame(67716, reset($allWins));
+    }
+
+    public function testFindLastWin()
+    {
+        $boards = Day04::parseInput('input/Sample04');
+        $allWins = Day04::findAllWins($boards, Day04::$sampleNumbers);
+        $this->assertSame(1924, end($allWins));
+
+        $boards = Day04::parseInput('input/Day04');
+        $allWins = Day04::findAllWins($boards, Day04::$actualNumbers);
+        $this->assertSame(1830, end($allWins));
     }
 }
