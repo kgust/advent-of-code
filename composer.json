@@ -27,5 +27,8 @@
     ],
     "config": {
         "lock": false
+    },
+    "scripts": {
+        "test": [ "vendor/bin/phpunit" ]
     }
 }
