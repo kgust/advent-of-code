@@ -1,0 +1,26 @@
+{
+    "name": "kgust/advent-of-code",
+    "description": "Advent of Code 2023",
+    "type": "project",
+    "require": {
+        "pestphp/pest": "^2.26",
+        "pestphp/pest-plugin-drift": "^2.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AdventOfCode\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kevin Gustavson",
+            "email": "kdgustavson@gmail.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
