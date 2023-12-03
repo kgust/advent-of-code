@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "pestphp/pest": "^2.26",
-        "pestphp/pest-plugin-drift": "^2.5"
+        "pestphp/pest-plugin-drift": "^2.5",
+        "doctrine/collections": "^2.1"
     },
     "license": "MIT",
     "autoload": {
