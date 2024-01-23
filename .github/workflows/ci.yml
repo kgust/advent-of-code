@@ -1,6 +1,6 @@
 name: CI
 
-on: ['push']
+on: [push]
 
 jobs:
   build-test:
@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@2.3.4
-    - uses: php-actions:composer@v5
+    - uses: actions/checkout@v3
+    - uses: php-actions/composer@v6
     - uses: NWBY/pest-action@1.2.0
