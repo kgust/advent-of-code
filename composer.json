@@ -3,9 +3,9 @@
     "description": "Advent of Code 2023",
     "type": "project",
     "require": {
-        "pestphp/pest": "^2.26",
-        "pestphp/pest-plugin-drift": "^2.5",
-        "doctrine/collections": "^2.1"
+        "pestphp/pest": "^1.23",
+        "doctrine/collections": "^1.8",
+        "pestphp/pest-plugin-drift": "^0.2.0"
     },
     "license": "MIT",
     "autoload": {
@@ -20,6 +20,7 @@
         }
     ],
     "config": {
+        "platform": { "php": "8.0.2" },
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
