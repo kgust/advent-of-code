@@ -4,10 +4,11 @@ on: ['push']
 
 jobs:
   build-test:
+    name: Pest
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/pestphp-run-pest-tests@1.2.0
-      #- uses: actions/checkout@2.3.4
-      #- uses: php-actions:composer@v5
-      #- uses: NWBY/pest-action@1.2.0
+    - uses: actions/pestphp-run-pest-tests@1.2.0
+    #- uses: actions/checkout@2.3.4
+    #- uses: php-actions:composer@v5
+    #- uses: NWBY/pest-action@1.2.0
